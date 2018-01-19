@@ -1,0 +1,19 @@
+fname = input("Enter file name: ")
+if len(fname) < 1 : fname = "mbox-short.txt"
+from_found=False 
+#nic som nenasla, lebo som len zacala
+fh=open(fname)
+count_mails=0
+for line in fh:
+    line=line.rstrip()
+    if(line.startswith('From') and from_found==False):#a este som nic nenasla
+        words=line.split()
+        print(words[1])
+        count_mails+=1
+        from_found=True
+        # nasla som nieco
+    if line.startswith('----'):
+        from_found=False #zas nic nemam, som svorc
+print('There were', count_mails,'lines in the file with From as the first word')
+        
+        

@@ -1,0 +1,8 @@
+fname=input("Enter file name: ")
+fhand=open(fname)
+words=[]
+for line in fhand:
+    for word in line.split():
+        if(words.count(word) <1):
+            words.append(word)
+print(sorted(words))

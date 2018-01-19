@@ -1,0 +1,3 @@
+text="X-DSPAM-Confidence:    0.8475";
+beginning=text.find('0')
+num=float(print(text[beginning:]))
